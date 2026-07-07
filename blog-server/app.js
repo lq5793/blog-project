@@ -7,6 +7,15 @@ app.use(require('cors')());
 // 让后端能解析前端传来的 JSON 数据
 app.use(express.json());
 
+// 健康检查路由（Railway 默认检查 /）
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+// 或者针对 /health 路径
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // 引入文章路由
 const articleRouter = require('./router/article');
 // 所有以 /api/article 开头的请求，都交给 articleRouter 处理
