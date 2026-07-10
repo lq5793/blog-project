@@ -25,6 +25,6 @@ app.use('/api/article', articleRouter);
 
 // 启动服务器
 app.listen(port, () => {
-    console.log(`✅ 后端服务已启动，地址: http://localhost:3000`);
-    // console.log(`✅ 后端服务已启动，地址: http://localhost:${port}`);
+    // console.log(`✅ 后端服务已启动，地址: http://localhost:3000`);
+    console.log(`✅ 后端服务已启动，地址: http://localhost:${port}`);
 });
