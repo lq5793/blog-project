@@ -2,10 +2,11 @@ const mysql = require('mysql2/promise');
 
 // 创建数据库连接池
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '123456', // ⚠️ 这里改成你自己的 MySQL 密码！
-    database: 'blog_system',
+    host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  port: process.env.MYSQLPORT,
+  database: process.env.MYSQLDATABASE,
     waitForConnections: true,
     connectionLimit: 10
 });
